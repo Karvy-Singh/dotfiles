@@ -1,0 +1,158 @@
+{
+    "layer": "top", // Waybar at top layer
+    "modules-left": ["hyprland/workspaces"],
+    "modules-right": ["tray", "cpu", "memory", "backlight", "network", "pulseaudio", "battery", "clock"],
+//     
+//     "hyprland/workspaces": {
+//         "format": " {name}",         // How each workspace is displayed
+//         "on-click": "activate",            // Makes workspaces clickable
+//         "all-outputs": true,              // Only show workspaces for the current monitor
+//         "sort-by-number": true             // Keeps workspaces sorted numerically
+//   }
+// },
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        // "tooltip-format": "{:%Y-%m-%d | %H:%M}",
+        // "format-alt": "{:%Y-%m-%d}",
+        // "format": "{:%a %Y-%m-%d %l:%M %p}"
+        "interval": 60,
+        "tooltip": true,
+        "format": "{:%H.%M}",
+        "tooltip-format": "{:%Y-%m-d}"
+    },
+    "cpu": {
+        "format": "　{usage}%"
+    },
+    "memory": {
+        "format": "　{}%"
+    },
+    "backlight": {
+        //"device": "intel_backlight",
+        "format": "　{percent}%",
+        "format-icons": ["", ""]
+    },
+    "battery": {
+        //"states": {
+        //    // "good": 95,
+        //    "warning": 30,
+        //    "critical": 15
+        //},
+        "format": "　{capacity}%"
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        //"format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        // "interface": "wlp2s0", // (Optional) To force the use of this interface
+        "format-wifi": "　{signalStrength}%",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ethernet",
+        "format-disconnected": "⚠"
+    },
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "　{volume}%",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    }
+}
+
+// {
+// // Use JSONC (JSON with comments) so we can include helpful notes.
+// 
+// // Overall bar layout and positioning:
+//   "layer": "top",
+//   "position": "top",
+// 
+// // Define which modules go on the left, center, and right:
+//   "modules-left": [
+//     "workspaces",
+//     "window"
+//   ],
+//   "modules-center": [
+//     "clock"
+//   ],
+//   "modules-right": [
+//     "cpu",
+//     "memory",
+//     "backlight",
+//     "volume",
+//     "battery",
+//     "tray"
+//   ],
+// 
+// // -------------------------
+// // MODULE CONFIGURATIONS
+// // -------------------------
+// 
+// // Workspaces module:
+//   "workspaces": {
+//     // Show all workspaces and their name; adjust as needed
+//     "all-workspaces": true,
+//     "format": "{name}",
+//     "disable-scroll": true
+//   },
+// 
+// // Active window title:
+//   "window": {
+//     "format": "{title}",
+//     "max-length": 50,
+//     // Hides the window name if nothing is open
+//     "empty-format": ""
+//   },
+// 
+// // Clock (day, date, time):
+//   "clock": {
+//     "format": "{:%a %b %d %H:%M}",
+//     "tooltip": false
+//   },
+// 
+// // CPU usage:
+//   "cpu": {
+//     "format": "CPU {usage}%",
+//     "tooltip": false
+//   },
+// 
+// // Memory usage:
+//   "memory": {
+//     "format": "RAM {used} / {total}",
+//     "tooltip": false
+//   },
+// 
+// // Backlight (screen brightness):
+//   "backlight": {
+//     "format": "Bri {percent}%",
+//     "tooltip": false
+//   },
+// 
+// // Volume:
+//   "volume": {
+//     "format": "Vol {volume}%",
+//     "tooltip": false
+//   },
+// 
+// // Battery:
+//   "battery": {
+//     "format": "{capacity}% {icon}",
+//     "tooltip": false
+//   },
+// 
+// // System tray (for nm-applet, blueman-applet, etc.):
+//   "tray": {
+//     // No extra settings necessary by default
+//   }
+// }
+// 
