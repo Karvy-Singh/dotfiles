@@ -1,0 +1,56 @@
+@define-color module-bg #3E4541;
+  /* each module bubble */
+@define-color module-fg  #CCD17D;  /* module text */
+
+/* ─── BASE STYLING ───────────────────────────────────────────────────────── */
+* {
+  font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+}
+
+window#waybar {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 13px;
+  transition-property: background-color;
+  transition-duration: .5s;
+}
+
+/* remove container backgrounds so each module stands alone */
+.modules-left,
+.modules-center,
+.modules-right {
+  background: transparent;
+}
+
+/* ─── MODULE BUBBLES ────────────────────────────────────────────────────── */
+.module {
+  background-color: @module-bg;
+  color: @module-fg;
+  border-radius: 8px;
+  margin: 0 4px;
+  padding: 0 8px;
+  transition: background-color .3s;
+}
+
+.module:hover {
+  /* a slight brighten on hover */
+  background-color: #65687F;
+}
+
+/* clean up default button styles */
+button {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* keep the usual battery-critical red blink */
+@keyframes blink { to { color: #000; } }
+
+#battery.critical:not(.charging) {
+  background-color: #EA5455;
+  color: #FFF;
+  animation: blink 0.5s steps(12) infinite alternate;
+}
+
+
