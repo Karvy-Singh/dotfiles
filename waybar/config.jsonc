@@ -102,7 +102,7 @@
   "clock": {
         // "timezone": "America/New_York",
         // "format": " {time}", 
-        "format": "{:%d %b %Y  |  %a  |  %H:%M}",
+        "format": "  {:%d %b %Y  |  %A  |  %H:%M}  ",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%H:%M:%S}",
         "interval": 5
@@ -176,7 +176,7 @@
     "network": {
     "format-wifi": "{icon}   {essid}  ({signalStrength}%)",
     "format-alt": "{icon} ",
-    "format-disconnected": "󰤭  Disconnected",
+    "format-disconnected": "󰤭   Disconnected",
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "tooltip": true
   },
