@@ -75,6 +75,7 @@
     "modules-left": ["custom/clipboard","bluetooth","network","wlr/taskbar"],
     "modules-center": ["clock"],
     "modules-right": [
+        "custom/GitHub",
         "idle_inhibitor",
         "cpu", 
         "memory",
@@ -194,7 +195,12 @@
     "exec": "cliphist list | head -n 1",
     "on-click": "/usr/local/bin/cliphist-menu.sh",
     "interval": 5
-}
+},
+  "custom/GitHub": {
+    "format": "  ",
+    "tooltip": true,
+    "on-click": "xdg-open https://github.com/Karvy-Singh?tab=repositories"
+  }
 
 }
 
