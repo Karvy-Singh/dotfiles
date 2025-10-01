@@ -24,6 +24,10 @@ font pango:FiraCode Nerd Font Light 12
 exec --no-startup-id dex --autostart --environment i3
 #exec --no-startup-id xfce4-clipman -b 
 exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no startup-id sudo mount -t ntfs-3g -o uid=1000,gid=1000 /dev/sda2 /mnt/data -b
+exec --no-startup-id xrandr --auto 
+
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -45,10 +49,10 @@ floating_modifier $mod
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
+#tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -120,12 +124,12 @@ bindsym $mod+XF86MonBrightnessDown exec brightnessctl set 10%-
 
 #alt+tab like alternative
 bindsym $mod+Tab fullscreen disable, focus right, fullscreen enable
+bindsym $mod+Tab+a fullscreen disable, focus left, fullscreen enable
 bindsym $mod+shift+Tab fullscreen disable, focus right
 
 
 #for partial screenshoot shortcut
-bindsym $mod+t exec xfce4-screenshooter -r 
-
+bindsym $mod+t exec  xfce4-screenshooter -r 
 #check battery level without any assigned panel
 bindsym $mod+b exec --no-startup-id bash -c 'notify-send "Battery Level" "$(cat /sys/class/power_supply/BAT1/capacity)%"'
 
@@ -135,16 +139,21 @@ bindsym $mod+u exec amixer set 'Master' unmute
 bindsym $mod+minus exec amixer set 'Master' 10%-
 bindsym $mod+equal exec amixer set 'Master' 10%+
 
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id feh --bg-scale ~/Documents/wallhaven-l3jv8l.jpg
-exec --no-startup-id xfce4-clipman -b
+# Move focused window to scratchpad
+# bindsym $mod+k  move scratchpad
+# 
+# # Toggle scratchpad (show/hide)
+# bindsym $mod+l scratchpad show
 
+
+exec_always --no-startup-id bar 
+exec_always --no-startup-id feh --bg-scale ~/Documents/wallhaven-l3jv8l.jpg
 bindsym $mod+shift+v exec xfce4-popup-clipman
 
 default_border pixel 0
 default_floating_border pixel 0
 gaps inner 10
-gaps outer 5
+gaps outer 2
 #MY_STUFF_ENDS
 # focus the child container
 #bindsym $mod+d focus child
