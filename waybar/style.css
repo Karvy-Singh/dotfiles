@@ -1,6 +1,5 @@
-@define-color module-bg #3E4541;
   /* each module bubble */
-@define-color module-fg  #CCD17D;  /* module text */
+@define-color module-fg  #e0d26b;  /* module text */
 
 /* ─── BASE STYLING ───────────────────────────────────────────────────────── */
 * {
@@ -24,13 +23,14 @@ window#waybar {
 
 /* ─── MODULE BUBBLES ────────────────────────────────────────────────────── */
 .module {
-  background-color: @module-bg;
-  color: @module-fg;
+  background-color: rgba(0, 0, 0, 0.7); /* semi-transparent black */
+  color: @module-fg; /* light text for contrast */
   border-radius: 8px;
   margin: 0 4px;
   padding: 0 8px;
-  transition: background-color .3s;
+  transition: background-color 0.3s;
 }
+
 
 .module:hover {
   /* a slight brighten on hover */

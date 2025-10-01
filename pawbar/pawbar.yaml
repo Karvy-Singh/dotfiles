@@ -1,0 +1,53 @@
+bar:
+  truncate_priority:
+    - middle
+    - right
+    - left
+  ellipsis: "..."
+
+left:
+  - ws
+  - title
+
+middle:
+  - clock:
+      format: "%d %b %Y | %A | %H:%M"
+      tick: 1s
+
+right:
+  - custom:
+      format: " "
+      exec: "echo ''"
+      onclick: 
+        left:
+          run: ["xdg-open", "https://github.com/Karvy-Singh?tab=repositories"]
+  - space
+  - space
+  - idleinhibitor
+  - space
+  - space
+  - space
+  - wifi
+  - space
+  - space
+  - space
+  - volume
+  - space
+  - space
+  - space
+  - cpu 
+  - space
+  - space
+  - space
+
+  - ram
+  - space
+  - space
+  - space
+
+  - backlight
+  - space
+  - space
+  - space
+  - battery
+

@@ -157,4 +157,4 @@ configuration {
 }
 //@theme "arthur by Qball"
 
-@theme "/usr/share/rofi/themes/arthur.rasi"
+@theme "~/.config/rofi/test_arthur.rasi"
